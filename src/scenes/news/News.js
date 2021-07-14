@@ -20,27 +20,29 @@ const styles = StyleSheet.create({
   },
 })
 
-const Profile = ({ navigation }) => (
+const News = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Profile</Text>
+    <Text style={styles.title}>Home</Text>
     <Button
       title="Go to Details"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate('Details', { from: 'Profile', url: 'https://facebook.com' })
+        navigation.navigate('Details', { from: 'News', url: 'https://amazon.com' })
       }}
     />
   </View>
 )
 
-Profile.propTypes = {
-  navigation: PropTypes.shape({ navigate: PropTypes.func }),
+Home.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }),
 }
 
-Profile.defaultProps = {
+Home.defaultProps = {
   navigation: { navigate: () => null },
 }
 
-export default Profile
+export default Home

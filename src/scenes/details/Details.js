@@ -17,15 +17,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     marginBottom: 20,
+    alignContent: 'center'
   },
 })
 
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
+  const url = route?.params?.url
   return (
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.title}>{`Details (from ${from})`}</Text>
+      <Text style={styles.title}>{`READ URL from ${from}: ${url}`}</Text>
       <Button
         title="Go Back"
         color="white"

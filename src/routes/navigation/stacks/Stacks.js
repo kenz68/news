@@ -6,6 +6,8 @@ import Profile from 'scenes/profile'
 import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+import News from 'scenes/news'
+import { stackTraceLimit } from 'verror'
 
 // ------------------------------------
 // Constants
@@ -71,6 +73,24 @@ export const ProfileNavigator = () => (
       options={{
         title: 'Details',
       }}
+    />
+  </Stack.Navigator>
+)
+
+export const NewsNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="News"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="News"
+      component={News}
+      options={({ navigation }) => ({
+        title: 'News',
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
     />
   </Stack.Navigator>
 )
